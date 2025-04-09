@@ -308,6 +308,16 @@
     ],
     "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
+    "custom_field": "Interface Loopback20 - DIAG_VRF_GREEN = 'up'"
+  },
+  {
+    "name": "dc1-leaf2a",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
+    "result": "success",
     "custom_field": "Interface Port-Channel1 - SERVER_server2 = 'up'"
   },
   {
@@ -338,7 +348,27 @@
     ],
     "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
+    "custom_field": "Interface Vlan22 - VLAN22 = 'up'"
+  },
+  {
+    "name": "dc1-leaf2a",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
+    "result": "success",
     "custom_field": "Interface Vlan3009 - MLAG_L3_VRF_BLUE = 'up'"
+  },
+  {
+    "name": "dc1-leaf2a",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
+    "result": "success",
+    "custom_field": "Interface Vlan3019 - MLAG_L3_VRF_GREEN = 'up'"
   },
   {
     "name": "dc1-leaf2a",
