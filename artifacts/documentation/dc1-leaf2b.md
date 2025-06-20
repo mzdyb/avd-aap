@@ -728,10 +728,10 @@ ASN Notation: asplain
 
 #### Router BGP VRFs
 
-| VRF | Route-Distinguisher | Redistribute |
-| --- | ------------------- | ------------ |
-| BLUE | 10.255.0.6:10 | connected |
-| GREEN | 10.255.0.6:20 | connected |
+| VRF | Route-Distinguisher | Redistribute | Graceful Restart |
+| --- | ------------------- | ------------ | ---------------- |
+| BLUE | 10.255.0.6:10 | connected | - |
+| GREEN | 10.255.0.6:20 | connected | - |
 
 #### Router BGP Device Configuration
 

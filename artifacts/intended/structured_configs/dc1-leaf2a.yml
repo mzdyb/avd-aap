@@ -321,6 +321,7 @@ router_bgp:
       connected:
         enabled: true
         route_map: RM-CONN-2-BGP-VRFS
+serial_number: MTACHEDATACENTER005
 service_routing_protocols_model: multi-agent
 spanning_tree:
   mode: mstp
@@ -330,8 +331,8 @@ spanning_tree:
   no_spanning_tree_vlan: 4093-4094
 static_routes:
 - vrf: MGMT
-  destination_address_prefix: 0.0.0.0/0
-  gateway: 172.20.0.1
+  prefix: 0.0.0.0/0
+  next_hop: 172.20.0.1
 transceiver_qsfp_default_mode_4x10: true
 virtual_source_nat_vrfs:
 - name: BLUE
@@ -440,4 +441,3 @@ vxlan_interface:
         vni: 30010
       - name: GREEN
         vni: 30020
-serial_number: MTACHEDATACENTER005
