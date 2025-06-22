@@ -17,6 +17,9 @@
 
     - name: Debug variables
       ansible.builtin.debug:
+        var: device_vars
+    - name: Debug variables
+      ansible.builtin.debug:
         var: vars
 
     - name: Retrieve latest artifacts
