@@ -35,6 +35,8 @@
         name: anta_runner
       vars:
         root_dir: "{{ repository['path'] }}/{{ artifacts_folder }}"
+        ansible_user: '{{ ansible_user }}'
+        ansible_password: '{{ ansible_password }}'
 
     - name: Publish artifacts
       run_once: true
