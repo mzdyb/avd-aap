@@ -15,13 +15,6 @@
 
   tasks:
 
-    - name: Debug variables
-      ansible.builtin.debug:
-        var: device_vars
-    - name: Debug variables
-      ansible.builtin.debug:
-        var: vars
-
     - name: Retrieve latest artifacts
       delegate_to: localhost
       run_once: true
@@ -38,8 +31,6 @@
         name: anta_runner
       vars:
         root_dir: "{{ repository['path'] }}/{{ artifacts_folder }}"
-        ansible_user: '{{ ansible_user }}'
-        ansible_password: '{{ ansible_password }}'
 
     - name: Publish artifacts
       run_once: true
