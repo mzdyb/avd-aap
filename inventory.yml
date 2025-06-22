@@ -5,8 +5,6 @@ all:
       vars:
         ansible_httpapi_use_ssl: true
         ansible_httpapi_validate_certs: true
-        ansible_connection: ansible.netcommon.httpapi
-        ansible_network_os: arista.eos.eos
       children:
         DC1:
           children:
