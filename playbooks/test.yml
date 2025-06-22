@@ -27,7 +27,7 @@
 
     - name: Test network states
       import_role:
-        name: eos_validate_state
+        name: anta_runner
       vars:
         root_dir: "{{ repository['path'] }}/{{ artifacts_folder }}"
 
