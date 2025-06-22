@@ -1,4 +1,4 @@
-VERSION = 5.2.3
+VERSION = 5.4.0
 MAJOR_VERSION = 5 # AVD follows semantic versioning
 REPOSITORY = quay.io/mtache/avd-aap
 # docker, podman
