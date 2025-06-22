@@ -14,6 +14,11 @@
     changes_description: "Job: https://{{ awx_execution_node }}/execution/jobs/playbook/{{ awx_job_id }}"
 
   tasks:
+
+    - name: Debug variables
+      ansible.builtin.debug:
+        var: vars
+
     - name: Retrieve latest artifacts
       delegate_to: localhost
       run_once: true
