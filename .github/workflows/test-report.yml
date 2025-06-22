@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'artifacts/reports/**'
+      - 'artifacts/anta/reports/**'
 
 jobs:
   save-report:
@@ -20,7 +20,7 @@ jobs:
       with:
         name: ${{ steps.generate-name.outputs.artifact }}
         path: |
-          artifacts/reports/
+          artifacts/anta/reports/
     - name: Save summary
       run: |
-        cat artifacts/reports/*-state.md >> $GITHUB_STEP_SUMMARY
+        cat artifacts/anta/reports/anta_report.md >> $GITHUB_STEP_SUMMARY
