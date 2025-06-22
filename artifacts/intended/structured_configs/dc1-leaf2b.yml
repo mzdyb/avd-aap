@@ -113,9 +113,9 @@ management_interfaces:
   description: OOB_MANAGEMENT
   shutdown: false
   vrf: MGMT
-  ip_address: 172.20.1.6/16
+  ip_address: 172.20.1.7/24
   type: oob
-  gateway: 172.20.0.1
+  gateway: 172.20.1.1
 metadata:
   platform: cEOSLab
   fabric_name: PARIS
@@ -332,7 +332,7 @@ spanning_tree:
 static_routes:
 - vrf: MGMT
   prefix: 0.0.0.0/0
-  next_hop: 172.20.0.1
+  next_hop: 172.20.1.1
 transceiver_qsfp_default_mode_4x10: true
 virtual_source_nat_vrfs:
 - name: BLUE

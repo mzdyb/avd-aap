@@ -17,12 +17,12 @@
 
 | POD | Type | Node | Management IP | Platform | Provisioned in CloudVision | Serial Number |
 | --- | ---- | ---- | ------------- | -------- | -------------------------- | ------------- |
-| PARIS | l3leaf | dc1-leaf1a | 172.20.1.3/16 | cEOSLab | Provisioned | MTACHEDATACENTER003 |
-| PARIS | l3leaf | dc1-leaf1b | 172.20.1.4/16 | cEOSLab | Provisioned | MTACHEDATACENTER004 |
-| PARIS | l3leaf | dc1-leaf2a | 172.20.1.5/16 | cEOSLab | Provisioned | MTACHEDATACENTER005 |
-| PARIS | l3leaf | dc1-leaf2b | 172.20.1.6/16 | cEOSLab | Provisioned | MTACHEDATACENTER006 |
-| PARIS | spine | dc1-spine1 | 172.20.1.1/16 | cEOSLab | Provisioned | MTACHEDATACENTER001 |
-| PARIS | spine | dc1-spine2 | 172.20.1.2/16 | cEOSLab | Provisioned | MTACHEDATACENTER002 |
+| PARIS | l3leaf | dc1-leaf1a | 172.20.1.4/24 | cEOSLab | Provisioned | MTACHEDATACENTER003 |
+| PARIS | l3leaf | dc1-leaf1b | 172.20.1.5/24 | cEOSLab | Provisioned | MTACHEDATACENTER004 |
+| PARIS | l3leaf | dc1-leaf2a | 172.20.1.6/24 | cEOSLab | Provisioned | MTACHEDATACENTER005 |
+| PARIS | l3leaf | dc1-leaf2b | 172.20.1.7/24 | cEOSLab | Provisioned | MTACHEDATACENTER006 |
+| PARIS | spine | dc1-spine1 | 172.20.1.2/24 | cEOSLab | Provisioned | MTACHEDATACENTER001 |
+| PARIS | spine | dc1-spine2 | 172.20.1.3/24 | cEOSLab | Provisioned | MTACHEDATACENTER002 |
 
 > Provision status is based on Ansible inventory declaration and do not represent real status from CloudVision.
 
