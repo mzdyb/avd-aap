@@ -6,7 +6,7 @@ mgmt:
 topology:
   kinds:
     ceos:
-      image: arista/ceos:4.33.2F
+      image: ceos:4.34.1F
 
   nodes:
     spine1:
@@ -53,7 +53,7 @@ topology:
 
     server1:
       kind: linux
-      image: lab-server
+      image: avd-lab-server
       binds:
       - servers/server1-netplan.yaml:/etc/netplan/netplan.yaml
       labels:
@@ -62,7 +62,7 @@ topology:
 
     server2:
       kind: linux
-      image: lab-server
+      image: avd-lab-server
       binds:
       - servers/server2-netplan.yaml:/etc/netplan/netplan.yaml
       labels:

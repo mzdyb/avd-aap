@@ -13,27 +13,27 @@ all:
                 type: spine
               hosts:
                 dc1-spine1:
-                  serial_number: MTACHEDATACENTER001
-                  ansible_host: spine1.lab.cactus.ovh
+                  # serial_number: MTACHEDATACENTER001
+                  ansible_host: 172.20.1.1
                 dc1-spine2:
-                  serial_number: MTACHEDATACENTER002
-                  ansible_host: spine2.lab.cactus.ovh
+                  # serial_number: MTACHEDATACENTER002
+                  ansible_host: 172.20.1.2
             DC1_L3_LEAVES:
               vars:
                 type: l3leaf
               hosts:
                 dc1-leaf1a:
-                  serial_number: MTACHEDATACENTER003
-                  ansible_host: leaf1a.lab.cactus.ovh
+                  # serial_number: MTACHEDATACENTER003
+                  ansible_host: 172.20.1.3
                 dc1-leaf1b:
-                  serial_number: MTACHEDATACENTER004
-                  ansible_host: leaf1b.lab.cactus.ovh
+                  # serial_number: MTACHEDATACENTER004
+                  ansible_host: 172.20.1.4
                 dc1-leaf2a:
-                  serial_number: MTACHEDATACENTER005
-                  ansible_host: leaf2a.lab.cactus.ovh
+                  # serial_number: MTACHEDATACENTER005
+                  ansible_host: 172.20.1.5
                 dc1-leaf2b:
-                  serial_number: MTACHEDATACENTER006
-                  ansible_host: leaf2b.lab.cactus.ovh
+                  # serial_number: MTACHEDATACENTER006
+                  ansible_host: 172.20.1.6
     NETWORK_SERVICES:
       children:
         DC1_L3_LEAVES:

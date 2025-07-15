@@ -1,2 +1,2 @@
 all:
-	docker build . --pull -t lab-server
+	docker build . --pull -t avd-lab-server
