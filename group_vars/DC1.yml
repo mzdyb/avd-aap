@@ -5,11 +5,11 @@ overlay_routing_protocol: ebgp
 default_interfaces:
   - types: [ spine ]
     platforms: [ cEOSLab ]
-    downlink_interfaces: [ Ethernet1-4/1 ]
+    downlink_interfaces: [ Ethernet1-4 ]
   - types: [ l3leaf ]
     platforms: [ cEOSLab ]
-    uplink_interfaces: [ Ethernet49-50/1 ]
-    mlag_interfaces: [ Ethernet55-56/1 ]
+    uplink_interfaces: [ Ethernet49-50 ]
+    mlag_interfaces: [ Ethernet55-56 ]
 
 spine:
   defaults:
@@ -20,11 +20,11 @@ spine:
   nodes:
     - name: dc1-spine1
       id: 1
-      mgmt_ip: 172.20.1.1/24
+      mgmt_ip: 172.20.1.1/16
 
     - name: dc1-spine2
       id: 2
-      mgmt_ip: 172.20.1.2/24
+      mgmt_ip: 172.20.1.2/16
 
 l3leaf:
   defaults:
@@ -48,10 +48,10 @@ l3leaf:
       nodes:
         - name: dc1-leaf1a
           id: 1
-          mgmt_ip: 172.20.1.3/24
+          mgmt_ip: 172.20.1.3/16
         - name: dc1-leaf1b
           id: 2
-          mgmt_ip: 172.20.1.4/24
+          mgmt_ip: 172.20.1.4/16
 
     - group: LEAF2
       bgp_as: 65102
@@ -60,7 +60,7 @@ l3leaf:
       nodes:
         - name: dc1-leaf2a
           id: 3
-          mgmt_ip: 172.20.1.5/24
+          mgmt_ip: 172.20.1.5/16
         - name: dc1-leaf2b
           id: 4
-          mgmt_ip: 172.20.1.6/24
+          mgmt_ip: 172.20.1.6/16
