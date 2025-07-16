@@ -29,7 +29,7 @@ custom_platform_settings:
     non_mlag: 330
 
 
-mgmt_gateway: 172.20.1.1
+mgmt_gateway: 172.20.0.1
 
 # management_eapi:
 #   default_services: false
