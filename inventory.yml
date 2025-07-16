@@ -1,10 +1,7 @@
 ---
 all:
   children:
-    PARIS:
-      vars:
-        ansible_httpapi_use_ssl: true
-        ansible_httpapi_validate_certs: true
+    FABRIC:
       children:
         DC1:
           children:

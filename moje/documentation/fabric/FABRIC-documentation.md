@@ -1,4 +1,4 @@
-# PARIS
+# FABRIC
 
 ## Table of Contents
 
@@ -17,12 +17,12 @@
 
 | POD | Type | Node | Management IP | Platform | Provisioned in CloudVision | Serial Number |
 | --- | ---- | ---- | ------------- | -------- | -------------------------- | ------------- |
-| PARIS | l3leaf | dc1-leaf1a | 172.20.1.4/24 | cEOSLab | Provisioned | - |
-| PARIS | l3leaf | dc1-leaf1b | 172.20.1.5/24 | cEOSLab | Provisioned | - |
-| PARIS | l3leaf | dc1-leaf2a | 172.20.1.6/24 | cEOSLab | Provisioned | - |
-| PARIS | l3leaf | dc1-leaf2b | 172.20.1.7/24 | cEOSLab | Provisioned | - |
-| PARIS | spine | dc1-spine1 | 172.20.1.2/24 | cEOSLab | Provisioned | - |
-| PARIS | spine | dc1-spine2 | 172.20.1.3/24 | cEOSLab | Provisioned | - |
+| FABRIC | l3leaf | dc1-leaf1a | 172.20.1.4/24 | cEOSLab | Provisioned | - |
+| FABRIC | l3leaf | dc1-leaf1b | 172.20.1.5/24 | cEOSLab | Provisioned | - |
+| FABRIC | l3leaf | dc1-leaf2a | 172.20.1.6/24 | cEOSLab | Provisioned | - |
+| FABRIC | l3leaf | dc1-leaf2b | 172.20.1.7/24 | cEOSLab | Provisioned | - |
+| FABRIC | spine | dc1-spine1 | 172.20.1.2/24 | cEOSLab | Provisioned | - |
+| FABRIC | spine | dc1-spine2 | 172.20.1.3/24 | cEOSLab | Provisioned | - |
 
 > Provision status is based on Ansible inventory declaration and do not represent real status from CloudVision.
 
@@ -79,12 +79,12 @@
 
 | POD | Node | Loopback0 |
 | --- | ---- | --------- |
-| PARIS | dc1-leaf1a | 10.255.0.3/32 |
-| PARIS | dc1-leaf1b | 10.255.0.4/32 |
-| PARIS | dc1-leaf2a | 10.255.0.5/32 |
-| PARIS | dc1-leaf2b | 10.255.0.6/32 |
-| PARIS | dc1-spine1 | 10.255.0.1/32 |
-| PARIS | dc1-spine2 | 10.255.0.2/32 |
+| FABRIC | dc1-leaf1a | 10.255.0.3/32 |
+| FABRIC | dc1-leaf1b | 10.255.0.4/32 |
+| FABRIC | dc1-leaf2a | 10.255.0.5/32 |
+| FABRIC | dc1-leaf2b | 10.255.0.6/32 |
+| FABRIC | dc1-spine1 | 10.255.0.1/32 |
+| FABRIC | dc1-spine2 | 10.255.0.2/32 |
 
 ### VTEP Loopback VXLAN Tunnel Source Interfaces (VTEPs Only)
 
@@ -96,7 +96,7 @@
 
 | POD | Node | Loopback1 |
 | --- | ---- | --------- |
-| PARIS | dc1-leaf1a | 10.255.1.3/32 |
-| PARIS | dc1-leaf1b | 10.255.1.3/32 |
-| PARIS | dc1-leaf2a | 10.255.1.5/32 |
-| PARIS | dc1-leaf2b | 10.255.1.5/32 |
+| FABRIC | dc1-leaf1a | 10.255.1.3/32 |
+| FABRIC | dc1-leaf1b | 10.255.1.3/32 |
+| FABRIC | dc1-leaf2a | 10.255.1.5/32 |
+| FABRIC | dc1-leaf2b | 10.255.1.5/32 |

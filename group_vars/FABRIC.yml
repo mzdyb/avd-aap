@@ -1,0 +1,58 @@
+---
+ansible_connection: ansible.netcommon.httpapi
+ansible_network_os: arista.eos.eos
+ansible_user: admin
+ansible_password: admin
+ansible_become: true
+ansible_become_method: enable
+ansible_httpapi_port: 443
+ansible_httpapi_use_ssl: true
+ansible_httpapi_validate_certs: false
+
+fabric_name: FABRIC
+
+p2p_uplinks_mtu: 1500
+switchport_default:
+  mode: routed
+
+custom_platform_settings:
+- platforms:
+  - cEOSLab
+  feature_support:
+    bgp_update_wait_for_convergence: false
+    bgp_update_wait_install: false
+    interface_storm_control: false
+    queue_monitor_length_notify: false
+  management_interface: Management1
+  reload_delay:
+    mlag: 300
+    non_mlag: 330
+
+
+mgmt_gateway: 172.20.1.1
+
+# management_eapi:
+#   default_services: false
+
+name_servers:
+  - 8.8.8.8
+
+timezone: Europe/Warsaw
+
+ntp_settings:
+  servers:
+    - name: 0.pool.ntp.org
+
+local_users:
+  - name: ansible
+    privilege: 15
+    role: network-admin
+    sha512_password: $6$UgXobqB6A97AHWeD$CMbYx1.HLOHyYz8uuNbvbzZ980W32HcDidniJCKhWw/Mlk6ATfXDW7vFHyjGmatBLX0/skPKzY/vl2cuweOF31
+  - name: admin
+    privilege: 15
+    role: network-admin
+    sha512_password: $6$VNR74loJRhVSTyEi$TD/6CUyyCSHmlN34Drv0smP8wDg91/EQuMqad0ZdH5Cv1puvZRr/kxnwoe8TvaxWanTpgQUr1tBoUZL/Ev71i.
+
+custom_structured_configuration_aaa_authorization:
+  exec:
+    default: local

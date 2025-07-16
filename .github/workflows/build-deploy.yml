@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'group_vars/**'
-      - 'playbooks/build-deploy.yml'
+      # - 'playbooks/build-deploy.yml'
 
 jobs:
   launch-job-template:

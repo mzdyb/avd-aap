@@ -196,7 +196,6 @@ router_bgp:
       activate: true
     - name: EVPN-OVERLAY-PEERS
       activate: false
-serial_number: MTACHEDATACENTER001
 service_routing_protocols_model: multi-agent
 spanning_tree:
   mode: none
