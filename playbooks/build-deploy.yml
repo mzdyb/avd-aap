@@ -1,11 +1,11 @@
 ---
 - name: Update Arista fabric configuration
-  hosts: dc1-spine1
+  hosts: dc1-spine2
   gather_facts: false
 
   # vars:
-  #   artifacts_repository: https://github.com/mzdyb/avd-aap
-  #   artifacts_branch: main
+  #   repository: https://github.com/mzdyb/avd-aap
+  #   branch: main
   #   artifacts_folder: artifacts
   #   changes_name: "Configuration changes by Ansible Automation Platform"
   #   changes_description: |
@@ -13,12 +13,12 @@
   #     Job: https://{{ awx_execution_node }}/execution/jobs/playbook/{{ awx_job_id }}
 
   tasks:
-    - name: Retrieve latest artifacts
+    - name: Retrieve repository
       ansible.scm.git_retrieve:
         origin:
-          url: "{{ artifacts_repository }}"
+          url: "{{ repository }}"
         branch:
-          name: "{{ artifacts_branch }}"
+          name: "{{ branch }}"
           duplicate_detection: false
       delegate_to: localhost
       run_once: true
@@ -34,6 +34,8 @@
       ansible.builtin.import_role:
         name: arista.avd.eos_cli_config_gen
       register: eos_config
+      vars:
+        root_dir: "{{ repository['path'] }}/{{ artifacts_folder }}"
 
     - name: Deploy Configurations to Devices
       ansible.builtin.import_role:

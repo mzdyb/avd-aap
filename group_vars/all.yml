@@ -1,6 +1,6 @@
 ---
- artifacts_repository: "https://github.com/mzdyb/avd-aap"
- artifacts_branch: main
+ repository: "https://github.com/mzdyb/avd-aap"
+ branch: main
  artifacts_folder: artifacts
  changes_name: "Configuration changes by Ansible Automation Platform"
  changes_description: |

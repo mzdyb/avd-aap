@@ -47,23 +47,23 @@
 
 | Management Interface | Description | Type | VRF | IP Address | Gateway |
 | -------------------- | ----------- | ---- | --- | ---------- | ------- |
-| Management1 | OOB_MANAGEMENT | oob | MGMT | 172.20.1.3/24 | 172.20.1.1 |
+| Management0 | OOB_MANAGEMENT | oob | MGMT | 172.20.1.2/16 | 172.20.0.1 |
 
 ##### IPv6
 
 | Management Interface | Description | Type | VRF | IPv6 Address | IPv6 Gateway |
 | -------------------- | ----------- | ---- | --- | ------------ | ------------ |
-| Management1 | OOB_MANAGEMENT | oob | MGMT | - | - |
+| Management0 | OOB_MANAGEMENT | oob | MGMT | - | - |
 
 #### Management Interfaces Device Configuration
 
 ```eos
 !
-interface Management1
+interface Management0
    description OOB_MANAGEMENT
    no shutdown
    vrf MGMT
-   ip address 172.20.1.3/24
+   ip address 172.20.1.2/16
 ```
 
 ### IP Name Servers
@@ -101,7 +101,7 @@ clock timezone Europe/Warsaw
 
 | Interface | VRF |
 | --------- | --- |
-| Management1 | MGMT |
+| Management0 | MGMT |
 
 ##### NTP Servers
 
@@ -113,7 +113,7 @@ clock timezone Europe/Warsaw
 
 ```eos
 !
-ntp local-interface vrf MGMT Management1
+ntp local-interface vrf MGMT Management0
 ntp server vrf MGMT 0.pool.ntp.org prefer
 ```
 
@@ -241,38 +241,38 @@ switchport default mode routed
 
 | Interface | Description | Channel Group | IP Address | VRF |  MTU | Shutdown | ACL In | ACL Out |
 | --------- | ----------- | ------------- | ---------- | ----| ---- | -------- | ------ | ------- |
-| Ethernet1/1 | P2P_dc1-leaf1a_Ethernet50/1 | - | 10.255.255.2/31 | default | 1500 | False | - | - |
-| Ethernet2/1 | P2P_dc1-leaf1b_Ethernet50/1 | - | 10.255.255.6/31 | default | 1500 | False | - | - |
-| Ethernet3/1 | P2P_dc1-leaf2a_Ethernet50/1 | - | 10.255.255.10/31 | default | 1500 | False | - | - |
-| Ethernet4/1 | P2P_dc1-leaf2b_Ethernet50/1 | - | 10.255.255.14/31 | default | 1500 | False | - | - |
+| Ethernet1 | P2P_dc1-leaf1a_Ethernet50 | - | 10.255.255.2/31 | default | 1500 | False | - | - |
+| Ethernet2 | P2P_dc1-leaf1b_Ethernet50 | - | 10.255.255.6/31 | default | 1500 | False | - | - |
+| Ethernet3 | P2P_dc1-leaf2a_Ethernet50 | - | 10.255.255.10/31 | default | 1500 | False | - | - |
+| Ethernet4 | P2P_dc1-leaf2b_Ethernet50 | - | 10.255.255.14/31 | default | 1500 | False | - | - |
 
 #### Ethernet Interfaces Device Configuration
 
 ```eos
 !
-interface Ethernet1/1
-   description P2P_dc1-leaf1a_Ethernet50/1
+interface Ethernet1
+   description P2P_dc1-leaf1a_Ethernet50
    no shutdown
    mtu 1500
    no switchport
    ip address 10.255.255.2/31
 !
-interface Ethernet2/1
-   description P2P_dc1-leaf1b_Ethernet50/1
+interface Ethernet2
+   description P2P_dc1-leaf1b_Ethernet50
    no shutdown
    mtu 1500
    no switchport
    ip address 10.255.255.6/31
 !
-interface Ethernet3/1
-   description P2P_dc1-leaf2a_Ethernet50/1
+interface Ethernet3
+   description P2P_dc1-leaf2a_Ethernet50
    no shutdown
    mtu 1500
    no switchport
    ip address 10.255.255.10/31
 !
-interface Ethernet4/1
-   description P2P_dc1-leaf2b_Ethernet50/1
+interface Ethernet4
+   description P2P_dc1-leaf2b_Ethernet50
    no shutdown
    mtu 1500
    no switchport
@@ -348,13 +348,13 @@ no ip routing vrf MGMT
 
 | VRF | Destination Prefix | Next Hop IP | Exit interface | Administrative Distance | Tag | Route Name | Metric |
 | --- | ------------------ | ----------- | -------------- | ----------------------- | --- | ---------- | ------ |
-| MGMT | 0.0.0.0/0 | 172.20.1.1 | - | 1 | - | - | - |
+| MGMT | 0.0.0.0/0 | 172.20.0.1 | - | 1 | - | - | - |
 
 #### Static Routes Device Configuration
 
 ```eos
 !
-ip route vrf MGMT 0.0.0.0/0 172.20.1.1
+ip route vrf MGMT 0.0.0.0/0 172.20.0.1
 ```
 
 ### Router BGP
@@ -447,16 +447,16 @@ router bgp 65100
    neighbor 10.255.0.6 description dc1-leaf2b_Loopback0
    neighbor 10.255.255.3 peer group IPv4-UNDERLAY-PEERS
    neighbor 10.255.255.3 remote-as 65101
-   neighbor 10.255.255.3 description dc1-leaf1a_Ethernet50/1
+   neighbor 10.255.255.3 description dc1-leaf1a_Ethernet50
    neighbor 10.255.255.7 peer group IPv4-UNDERLAY-PEERS
    neighbor 10.255.255.7 remote-as 65101
-   neighbor 10.255.255.7 description dc1-leaf1b_Ethernet50/1
+   neighbor 10.255.255.7 description dc1-leaf1b_Ethernet50
    neighbor 10.255.255.11 peer group IPv4-UNDERLAY-PEERS
    neighbor 10.255.255.11 remote-as 65102
-   neighbor 10.255.255.11 description dc1-leaf2a_Ethernet50/1
+   neighbor 10.255.255.11 description dc1-leaf2a_Ethernet50
    neighbor 10.255.255.15 peer group IPv4-UNDERLAY-PEERS
    neighbor 10.255.255.15 remote-as 65102
-   neighbor 10.255.255.15 description dc1-leaf2b_Ethernet50/1
+   neighbor 10.255.255.15 description dc1-leaf2b_Ethernet50
    redistribute connected route-map RM-CONN-2-BGP
    !
    address-family evpn
