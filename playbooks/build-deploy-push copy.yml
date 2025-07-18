@@ -1,0 +1,73 @@
+---
+- name: Retrive repository from GitHub
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Pull repository from GitHub to EE
+      ansible.scm.git_retrieve:
+        origin:
+          url: "{{ repository_url }}"
+        branch:
+          name: "{{ branch }}"
+          duplicate_detection: false
+      register: repository
+      tags:
+        - scm
+        - pull
+
+    - debug: var=repository['path']
+
+- name: Build and deploy configurations
+  hosts: FABRIC
+  gather_facts: false
+
+  tasks:
+
+    - debug: var=hostvars['localhost']['repository']['path']
+
+    - name: Generate AVD Yaml Structured Configurations and Fabric Documentation
+      ansible.builtin.import_role:
+        name: arista.avd.eos_designs
+      vars:
+        root_dir: "{{ hostvars['localhost']['repository']['path'] }}/{{ artifacts_folder }}"
+      tags:
+        - build
+
+    - name: Generate Device Configurations and Documentation
+      ansible.builtin.import_role:
+        name: arista.avd.eos_cli_config_gen
+      vars:
+        root_dir: "{{ hostvars['localhost']['repository']['path'] }}/{{ artifacts_folder }}"
+      tags:
+        - build
+
+    # - name: Deploy Configurations to devices
+    #   ansible.builtin.import_role:
+    #     name: arista.avd.eos_config_deploy_eapi
+    #   vars:
+    #     root_dir: "{{ hostvars['localhost']['repository']['path'] }}/{{ artifacts_folder }}"
+    #   tags:
+    #     - deploy
+
+- name: Push artifacs from EE to GitHub
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - debug: var=repository['path']
+
+    - name: Push artifacts to GitHub
+      ansible.scm.git_publish:
+        path: "{{ repository['path'] }}"
+        commit:
+          message: "Updates made by Ansible"
+        # user:
+        #   name: "{{ git_user_name | default('ansible') }}"
+        #   email: "{{ git_user_email | default('ansible@example.com') }}"
+        token: "{{ github_pat }}"
+        include: "{{ artifacts_folder }}"
+        # remove: true
+      tags:
+        - scm
+        - push

@@ -9,55 +9,55 @@ config_end: true
 enable_password:
   disabled: true
 ethernet_interfaces:
-- name: Ethernet55/1
-  description: MLAG_dc1-leaf2a_Ethernet55/1
+- name: Ethernet55
+  description: MLAG_dc1-leaf2b_Ethernet55
   shutdown: false
   channel_group:
-    id: 551
+    id: 55
     mode: active
-  peer: dc1-leaf2a
-  peer_interface: Ethernet55/1
+  peer: dc1-leaf2b
+  peer_interface: Ethernet55
   peer_type: mlag_peer
-- name: Ethernet56/1
-  description: MLAG_dc1-leaf2a_Ethernet56/1
+- name: Ethernet56
+  description: MLAG_dc1-leaf2b_Ethernet56
   shutdown: false
   channel_group:
-    id: 551
+    id: 55
     mode: active
-  peer: dc1-leaf2a
-  peer_interface: Ethernet56/1
+  peer: dc1-leaf2b
+  peer_interface: Ethernet56
   peer_type: mlag_peer
-- name: Ethernet49/1
-  description: P2P_dc1-spine1_Ethernet4/1
+- name: Ethernet49
+  description: P2P_dc1-spine1_Ethernet3
   shutdown: false
   mtu: 1500
-  ip_address: 10.255.255.13/31
+  ip_address: 10.255.255.9/31
   peer: dc1-spine1
-  peer_interface: Ethernet4/1
+  peer_interface: Ethernet3
   peer_type: spine
   switchport:
     enabled: false
-- name: Ethernet50/1
-  description: P2P_dc1-spine2_Ethernet4/1
+- name: Ethernet50
+  description: P2P_dc1-spine2_Ethernet3
   shutdown: false
   mtu: 1500
-  ip_address: 10.255.255.15/31
+  ip_address: 10.255.255.11/31
   peer: dc1-spine2
-  peer_interface: Ethernet4/1
+  peer_interface: Ethernet3
   peer_type: spine
   switchport:
     enabled: false
 - name: Ethernet1
-  description: SERVER_server2_eth2
+  description: SERVER_server2_eth1
   shutdown: false
   channel_group:
     id: 1
     mode: active
   peer: server2
-  peer_interface: eth2
+  peer_interface: eth1
   peer_type: server
   port_profile: server
-hostname: dc1-leaf2b
+hostname: dc1-leaf2a
 ip_igmp_snooping:
   globally_enabled: true
 ip_name_servers:
@@ -70,16 +70,16 @@ local_users:
 - name: admin
   privilege: 15
   role: network-admin
-  sha512_password: $6$ZGwJJdGz2X/bihyP$nqB/UKt2n3GBaeZS2/gMHTvIk2NjhJ3rk2/Sge.OBOvCgCNXSx7qmMg.HolGCMTcuM.qZjJXJx9FUwgmuoJAl0
+  sha512_password: $6$VNR74loJRhVSTyEi$TD/6CUyyCSHmlN34Drv0smP8wDg91/EQuMqad0ZdH5Cv1puvZRr/kxnwoe8TvaxWanTpgQUr1tBoUZL/Ev71i.
 - name: ansible
   privilege: 15
   role: network-admin
-  sha512_password: $6$ZGwJJdGz2X/bihyP$nqB/UKt2n3GBaeZS2/gMHTvIk2NjhJ3rk2/Sge.OBOvCgCNXSx7qmMg.HolGCMTcuM.qZjJXJx9FUwgmuoJAl0
+  sha512_password: $6$UgXobqB6A97AHWeD$CMbYx1.HLOHyYz8uuNbvbzZ980W32HcDidniJCKhWw/Mlk6ATfXDW7vFHyjGmatBLX0/skPKzY/vl2cuweOF31
 loopback_interfaces:
 - name: Loopback0
   description: ROUTER_ID
   shutdown: false
-  ip_address: 10.255.0.6/32
+  ip_address: 10.255.0.5/32
 - name: Loopback1
   description: VXLAN_TUNNEL_SOURCE
   shutdown: false
@@ -88,45 +88,45 @@ loopback_interfaces:
   description: DIAG_VRF_VRF10
   shutdown: false
   vrf: VRF10
-  ip_address: 10.255.10.6/32
+  ip_address: 10.255.10.5/32
 - name: Loopback20
   description: DIAG_VRF_VRF20
   shutdown: false
   vrf: VRF20
-  ip_address: 10.255.20.6/32
+  ip_address: 10.255.20.5/32
 management_api_http:
   enable_https: true
   enable_vrfs:
   - name: MGMT
 management_interfaces:
-- name: Management1
+- name: Management0
   description: OOB_MANAGEMENT
   shutdown: false
   vrf: MGMT
-  ip_address: 172.20.1.7/24
+  ip_address: 172.20.1.5/16
   type: oob
-  gateway: 172.20.1.1
+  gateway: 172.20.0.1
 metadata:
   platform: cEOSLab
   fabric_name: FABRIC
 mlag_configuration:
   domain_id: LEAF2
   local_interface: Vlan4094
-  peer_address: 10.255.1.68
-  peer_link: Port-Channel551
+  peer_address: 10.255.1.69
+  peer_link: Port-Channel55
   reload_delay_mlag: '300'
   reload_delay_non_mlag: '330'
 ntp:
   local_interface:
-    name: Management1
+    name: Management0
     vrf: MGMT
   servers:
   - name: 0.pool.ntp.org
     preferred: true
     vrf: MGMT
 port_channel_interfaces:
-- name: Port-Channel551
-  description: MLAG_dc1-leaf2a_Port-Channel551
+- name: Port-Channel55
+  description: MLAG_dc1-leaf2b_Port-Channel55
   shutdown: false
   switchport:
     enabled: true
@@ -185,7 +185,7 @@ router_bfd:
     multiplier: 3
 router_bgp:
   as: '65102'
-  router_id: 10.255.0.6
+  router_id: 10.255.0.5
   maximum_paths:
     paths: 4
     ecmp: 4
@@ -196,7 +196,7 @@ router_bgp:
   - name: MLAG-IPv4-UNDERLAY-PEER
     type: ipv4
     remote_as: '65102'
-    description: dc1-leaf2a
+    description: dc1-leaf2b
     next_hop_self: true
     send_community: all
     maximum_routes: 12000
@@ -213,20 +213,20 @@ router_bgp:
     send_community: all
     maximum_routes: 0
   neighbors:
-  - ip_address: 10.255.1.100
+  - ip_address: 10.255.1.101
     peer_group: MLAG-IPv4-UNDERLAY-PEER
-    peer: dc1-leaf2a
-    description: dc1-leaf2a_Vlan4093
-  - ip_address: 10.255.255.12
+    peer: dc1-leaf2b
+    description: dc1-leaf2b_Vlan4093
+  - ip_address: 10.255.255.8
     peer_group: IPv4-UNDERLAY-PEERS
     remote_as: '65100'
     peer: dc1-spine1
-    description: dc1-spine1_Ethernet4/1
-  - ip_address: 10.255.255.14
+    description: dc1-spine1_Ethernet3
+  - ip_address: 10.255.255.10
     peer_group: IPv4-UNDERLAY-PEERS
     remote_as: '65100'
     peer: dc1-spine2
-    description: dc1-spine2_Ethernet4/1
+    description: dc1-spine2_Ethernet3
   - ip_address: 10.255.0.1
     peer_group: EVPN-OVERLAY-PEERS
     remote_as: '65100'
@@ -244,7 +244,7 @@ router_bgp:
   vlans:
   - id: 12
     tenant: TENANT1
-    rd: 10.255.0.6:10012
+    rd: 10.255.0.5:10012
     route_targets:
       both:
       - 10012:10012
@@ -252,7 +252,7 @@ router_bgp:
     - learned
   - id: 22
     tenant: TENANT1
-    rd: 10.255.0.6:10022
+    rd: 10.255.0.5:10022
     route_targets:
       both:
       - 10022:10022
@@ -272,7 +272,7 @@ router_bgp:
       activate: false
   vrfs:
   - name: VRF10
-    rd: 10.255.0.6:10
+    rd: 10.255.0.5:10
     route_targets:
       import:
       - address_family: evpn
@@ -282,17 +282,17 @@ router_bgp:
       - address_family: evpn
         route_targets:
         - '10:10'
-    router_id: 10.255.0.6
+    router_id: 10.255.0.5
     neighbors:
-    - ip_address: 10.255.1.100
+    - ip_address: 10.255.1.101
       peer_group: MLAG-IPv4-UNDERLAY-PEER
-      description: dc1-leaf2a_Vlan3009
+      description: dc1-leaf2b_Vlan3009
     redistribute:
       connected:
         enabled: true
         route_map: RM-CONN-2-BGP-VRFS
   - name: VRF20
-    rd: 10.255.0.6:20
+    rd: 10.255.0.5:20
     route_targets:
       import:
       - address_family: evpn
@@ -302,11 +302,11 @@ router_bgp:
       - address_family: evpn
         route_targets:
         - '20:20'
-    router_id: 10.255.0.6
+    router_id: 10.255.0.5
     neighbors:
-    - ip_address: 10.255.1.100
+    - ip_address: 10.255.1.101
       peer_group: MLAG-IPv4-UNDERLAY-PEER
-      description: dc1-leaf2a_Vlan3019
+      description: dc1-leaf2b_Vlan3019
     redistribute:
       connected:
         enabled: true
@@ -321,23 +321,23 @@ spanning_tree:
 static_routes:
 - vrf: MGMT
   prefix: 0.0.0.0/0
-  next_hop: 172.20.1.1
+  next_hop: 172.20.0.1
 transceiver_qsfp_default_mode_4x10: true
 virtual_source_nat_vrfs:
 - name: VRF10
-  ip_address: 10.255.10.6
+  ip_address: 10.255.10.5
 - name: VRF20
-  ip_address: 10.255.20.6
+  ip_address: 10.255.20.5
 vlan_interfaces:
 - name: Vlan4093
   description: MLAG_L3
   shutdown: false
-  ip_address: 10.255.1.101/31
+  ip_address: 10.255.1.100/31
   mtu: 1500
 - name: Vlan4094
   description: MLAG
   shutdown: false
-  ip_address: 10.255.1.69/31
+  ip_address: 10.255.1.68/31
   mtu: 1500
   no_autostate: true
 - name: Vlan12
@@ -352,7 +352,7 @@ vlan_interfaces:
   description: MLAG_L3_VRF_VRF10
   shutdown: false
   vrf: VRF10
-  ip_address: 10.255.1.101/31
+  ip_address: 10.255.1.100/31
   mtu: 1500
   tenant: TENANT1
   type: underlay_peering
@@ -368,7 +368,7 @@ vlan_interfaces:
   description: MLAG_L3_VRF_VRF20
   shutdown: false
   vrf: VRF20
-  ip_address: 10.255.1.101/31
+  ip_address: 10.255.1.100/31
   mtu: 1500
   tenant: TENANT1
   type: underlay_peering
@@ -415,7 +415,7 @@ vrfs:
   tenant: TENANT1
 vxlan_interface:
   vxlan1:
-    description: dc1-leaf2b_VTEP
+    description: dc1-leaf2a_VTEP
     vxlan:
       source_interface: Loopback1
       udp_port: 4789

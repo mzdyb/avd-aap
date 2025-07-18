@@ -1,8 +1,67 @@
 ---
- repository: "https://github.com/mzdyb/avd-aap"
- branch: main
- artifacts_folder: artifacts
- changes_name: "Configuration changes by Ansible Automation Platform"
- changes_description: |
-   Triggered by commit: {{ artifacts_repository }}/commit/{{ awx_project_revision }}
-   Job: https://{{ awx_execution_node }}/execution/jobs/playbook/{{ awx_job_id }}
+repository_url: "https://github.com/mzdyb/avd-aap"
+branch: main
+artifacts_folder: artifacts
+
+# Perform config backup before config replace
+eos_config_deploy_eapi_pre_running_config_backup: false
+
+
+# Root directory where to build output structure
+root_dir: '{{ inventory_dir }}'
+
+
+# # Documentation folders
+# # Main documentation folder
+# documentation_dir_name: 'documentation'
+# documentation_dir: '{{ root_dir }}/{{ artifacts_folder }}/{{ documentation_dir_name }}'
+
+# # Device documentation
+# devices_dir_name: 'devices'
+# devices_dir: '{{ documentation_dir }}/{{ artifacts_folder }}/{{ devices_dir_name }}'
+
+
+# # AVD configurations output
+# # Main output directory
+# output_dir_name: 'intended'
+# output_dir: '{{ root_dir }}/{{ artifacts_folder }}/{{ output_dir_name }}'
+
+# # Output for structured YAML files:
+# structured_dir_name: 'structured_configs'
+# structured_dir: '{{ output_dir }}/{{ artifacts_folder }}/{{ structured_dir_name }}'
+
+# # EOS Configuration Directory name
+# eos_config_dir_name: 'configs'
+# eos_config_dir: '{{ output_dir }}/{{ artifacts_folder }}/{{ eos_config_dir_name }}'
+
+
+
+
+
+# # Main directory for the ANTA-related files.
+# anta_dir_name: "anta"
+# anta_dir: "{{ root_dir }}/{{ anta_dir_name }}"
+
+# # Directory for ANTA user-defined catalog files. These are the catalogs created by the user.
+# # The role will search for valid ANTA catalogs in this directory
+# # and merge them with each device's AVD-generated catalog.
+# user_catalogs_dir_name: "user_catalogs"
+# user_catalogs_dir: "{{ anta_dir }}/{{ user_catalogs_dir_name }}"
+
+# # Directory for AVD-generated ANTA catalogs. Per-device catalogs will be stored here.
+# avd_catalogs_dir_name: "avd_catalogs"
+# avd_catalogs_dir: "{{ anta_dir }}/{{ avd_catalogs_dir_name }}"
+
+# # Directory for the ANTA debug's logs. When running the role with `-vvv`,
+# # all ANTA logs will be stored here by batch.
+# anta_runner_logs_dir_name: "logs"
+# anta_runner_logs_dir: "{{ anta_dir }}/{{ anta_runner_logs_dir_name }}"
+
+# # Directory for ANTA reports.
+# anta_reports_dir_name: "reports"
+# anta_reports_dir: "{{ anta_dir }}/{{ anta_reports_dir_name }}"
+
+# # Paths for the generated reports. Supports JSON, CSV, and Markdown.
+# anta_report_json_path: "{{ anta_reports_dir }}/anta_report.json"
+# anta_report_md_path: "{{ anta_reports_dir }}/anta_report.md"
+# anta_report_csv_path: "{{ anta_reports_dir }}/anta_report.csv"

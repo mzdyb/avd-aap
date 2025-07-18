@@ -1,0 +1,57 @@
+---
+- name: Build, deploy configuration and publish artifacts to GitHub
+  hosts: FABRIC
+  gather_facts: false
+
+  tasks:
+    - name: Pull repository from GitHub to EE
+      ansible.scm.git_retrieve:
+        origin:
+          url: "{{ repository_url }}"
+        branch:
+          name: "{{ branch }}"
+          duplicate_detection: false
+      register: repository
+      delegate_to: localhost
+      run_once: true
+      tags:
+        - scm
+        - pull
+
+    - name: Generate AVD Yaml Structured Configurations and Fabric Documentation
+      ansible.builtin.import_role:
+        name: arista.avd.eos_designs
+      vars:
+        root_dir: "{{ repository['path'] }}/{{ artifacts_folder }}"
+      tags:
+        - build
+
+    - name: Generate Device Configurations and Documentation
+      ansible.builtin.import_role:
+        name: arista.avd.eos_cli_config_gen
+      vars:
+        root_dir: "{{ repository['path'] }}/{{ artifacts_folder }}"
+      tags:
+        - build
+
+    - name: Deploy Configurations to devices
+      ansible.builtin.import_role:
+        name: arista.avd.eos_config_deploy_eapi
+      vars:
+        root_dir: "{{ repository['path'] }}/{{ artifacts_folder }}"
+      tags:
+        - deploy
+
+    - name: Push artifacts to GitHub
+      ansible.scm.git_publish:
+        path: "{{ repository['path'] }}"
+        commit:
+          message: "Updates made by Ansible"
+        token: "{{ github_pat }}"
+        include: "{{ artifacts_folder }}"
+        # remove: true
+      delegate_to: localhost
+      run_once: true
+      tags:
+        - scm
+        - push

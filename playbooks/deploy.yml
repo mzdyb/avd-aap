@@ -1,59 +1,9 @@
 ---
-- name: Deploy Arista fabric configuration
-  hosts: DC1
-  # connection: local
-  gather_facts: false
-
-  vars:
-    artifacts_repository: https://github.com/mzdyb/avd-aap
-    artifacts_branch: main
-    artifacts_folder: artifacts
-    changes_name: "Configuration changes by Ansible Automation Platform"
-    changes_description: "Job: https://{{ awx_execution_node }}/execution/jobs/playbook/{{ awx_job_id }}"
-
-  tasks:
-    - name: Retrieve latest artifacts
-      ansible.scm.git_retrieve:
-        origin:
-          url: "{{ artifacts_repository }}"
-        branch:
-          name: "{{ artifacts_branch }}"
-          duplicate_detection: false
-      elegate_to: localhost
-      run_once: true
-      register: repository
-
-    - name: Generate AVD Structured Configurations and Fabric Documentation
-      ansible.builtin.import_role:
-        name: arista.avd.eos_designs
-
-
-    # - name: Deploy configurations and tags to CloudVision
-    #   delegate_to: cloudvision
-    #   import_role:
-    #     name: cv_deploy
-    #   vars:
-    #     root_dir: "{{ repository['path'] }}/{{ artifacts_folder }}"
-    #     cv_register_detailed_results: true
-    #     cv_workspace_name: "{{ changes_name }}"
-    #     cv_workspace_description: "{{ changes_description }}"
-    #     cv_change_control_description: "{{ changes_description }}"
-
-# deploy.yml
-
-- name: Build and Deploy Configs
+- name: Deploy configuration to devices
   hosts: FABRIC
   gather_facts: false
+
   tasks:
-
-    - name: Generate AVD Structured Configurations and Fabric Documentation
-      ansible.builtin.import_role:
-        name: arista.avd.eos_designs
-
-    - name: Generate Device Configurations and Documentation
-      ansible.builtin.import_role:
-        name: arista.avd.eos_cli_config_gen
-
     - name: Deploy Configurations to Devices
       ansible.builtin.import_role:
         name: arista.avd.eos_config_deploy_eapi
