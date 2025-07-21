@@ -1,5 +1,5 @@
 ---
-- name: Test Arista fabric state
+- name: Validate devices operational states
   hosts: all
   connection: local
   gather_facts: false
