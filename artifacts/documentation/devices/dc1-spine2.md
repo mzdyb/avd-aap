@@ -107,14 +107,14 @@ clock timezone Europe/Warsaw
 
 | Server | VRF | Preferred | Burst | iBurst | Version | Min Poll | Max Poll | Local-interface | Key |
 | ------ | --- | --------- | ----- | ------ | ------- | -------- | -------- | --------------- | --- |
-| 0.pool.ntp.org | MGMT | True | - | - | - | - | - | - | - |
+| time.nist.gov | MGMT | True | - | - | - | - | - | - | - |
 
 #### NTP Device Configuration
 
 ```eos
 !
 ntp local-interface vrf MGMT Management0
-ntp server vrf MGMT 0.pool.ntp.org prefer
+ntp server vrf MGMT time.nist.gov prefer
 ```
 
 ### Management API HTTP

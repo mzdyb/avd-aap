@@ -121,7 +121,7 @@ ntp:
     name: Management0
     vrf: MGMT
   servers:
-  - name: 0.pool.ntp.org
+  - name: time.nist.gov
     preferred: true
     vrf: MGMT
 port_channel_interfaces:
