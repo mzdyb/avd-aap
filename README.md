@@ -1,4 +1,6 @@
 # Arista Validated Designs using Ansible Automation Platform
+This repository is forked and modified version of the following Netdevops Community project:
+[avd-aap](https://github.com/arista-netdevops-community/avd-aap )
 
 This repository is an integration example between [Arista Validated Designs](https://avd.arista.com/), [Ansible Automation Platform](https://www.redhat.com/en/technologies/management/ansible) and [CloudVision](https://www.arista.com/en/products/eos/eos-cloudvision).
 
