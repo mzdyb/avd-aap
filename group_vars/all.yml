@@ -3,7 +3,6 @@ repository_url: "https://github.com/mzdyb/avd-aap"
 branch: main
 artifacts_folder: artifacts
 
-# Perform config backup before config replace
 eos_config_deploy_eapi_pre_running_config_backup: false
 
 
@@ -38,7 +37,7 @@ root_dir: '{{ inventory_dir }}'
 
 
 
-# # Main directory for the ANTA-related files.
+# Main directory for the ANTA-related files.
 # anta_dir_name: "anta"
 # anta_dir: "{{ root_dir }}/{{ anta_dir_name }}"
 

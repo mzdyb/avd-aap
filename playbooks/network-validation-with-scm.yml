@@ -1,0 +1,40 @@
+---
+- name: Validate devices operational states
+  hosts: FABRIC
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Pull repository from GitHub to EE
+      ansible.scm.git_retrieve:
+        origin:
+          url: "{{ repository_url }}"
+        branch:
+          name: "{{ branch }}"
+          duplicate_detection: false
+      register: repository
+      delegate_to: localhost
+      run_once: true
+      tags:
+        - scm
+        - pull
+
+    - name: Run ANTA on devices
+      ansible.builtin.import_role:
+        name: arista.avd.anta_runner
+      vars:
+        root_dir: "{{ repository['path'] }}/{{ artifacts_folder }}"
+
+    - name: Push artifacts to GitHub
+      ansible.scm.git_publish:
+        path: "{{ repository['path'] }}"
+        commit:
+          message: "Updates made by Ansible"
+        token: "{{ github_pat }}"
+        include: "{{ artifacts_folder }}"
+        # remove: true
+      delegate_to: localhost
+      run_once: true
+      tags:
+        - scm
+        - push

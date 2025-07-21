@@ -8,4 +8,5 @@
     - name: Test network states
       import_role:
         name: arista.avd.anta_runner
-
+      vars:
+        root_dir: "{{ inventory_dir }}/{{ artifacts_folder }}"
