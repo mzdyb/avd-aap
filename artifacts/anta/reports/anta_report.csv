@@ -1,0 +1,213 @@
+Device,Test Name,Test Status,Message(s),Test description,Test category
+dc1-leaf1a,VerifyBFDPeersHealth,success,,Verifies the health of IPv4 BFD peers across all VRFs.,BFD
+dc1-leaf1a,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+dc1-leaf1a,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+dc1-leaf1a,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+dc1-leaf1a,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+dc1-leaf1a,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+dc1-leaf1a,VerifyReachability,success,,Verifies reachability to IPv4 BGP neighbors with an update source configured.,Connectivity
+dc1-leaf1a,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
+dc1-leaf1a,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
+dc1-leaf1a,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
+dc1-leaf1a,VerifyIllegalLACP,success,,Verifies there are no illegal LACP packets in all port channels.,Interfaces
+dc1-leaf1a,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 18672,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+dc1-leaf1a,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+dc1-leaf1a,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+dc1-leaf1a,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+dc1-leaf1a,VerifyInterfacesStatus,success,,Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+dc1-leaf1a,VerifyPortChannels,success,,Verifies there are no inactive ports in all port channels.,Interfaces
+dc1-leaf1a,VerifyStormControlDrops,skipped,VerifyStormControlDrops test is not supported on cEOSLab,Verifies there are no interface storm-control drop counters.,Interfaces
+dc1-leaf1a,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Jul 21 10:19:54 leaf1a NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ Jul 21 10:20:23 leaf1a LoadConfig: %SYSDB-3-STARTUP_CONFIG_PARSE_ERROR: Errors encountered in parsing the startup-config
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+dc1-leaf1a,VerifyMlagConfigSanity,success,,Verifies there are no MLAG config-sanity inconsistencies.,MLAG
+dc1-leaf1a,VerifyMlagInterfaces,success,,Verifies there are no inactive or active-partial MLAG ports.,MLAG
+dc1-leaf1a,VerifyMlagReloadDelay,success,,Verifies the reload-delay parameters of the MLAG configuration.,MLAG
+dc1-leaf1a,VerifyMlagStatus,success,,Verifies the health status of the MLAG configuration.,MLAG
+dc1-leaf1a,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+dc1-leaf1a,VerifyTelnetStatus,success,,Verifies if Telnet is disabled in the default VRF.,Security
+dc1-leaf1a,VerifySTPBlockedPorts,success,,Verifies there is no STP blocked ports.,STP
+dc1-leaf1a,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+dc1-leaf1a,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+dc1-leaf1a,VerifyCoredump,success,,Verifies there are no core dump files.,System
+dc1-leaf1a,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  89% / - Higher disk space utilization - Expected: 75% Actual: 89% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  89% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 89%,Verifies that no partition is utilizing more than 75% of its disk space.,System
+dc1-leaf1a,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.52%,Verifies whether the memory utilization is below 75%.,System
+dc1-leaf1a,VerifyNTP,failure,NTP status mismatch - Expected: synchronised Actual: unsynchronised,Verifies if NTP is synchronised.,System
+dc1-leaf1a,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+dc1-leaf1b,VerifyBFDPeersHealth,success,,Verifies the health of IPv4 BFD peers across all VRFs.,BFD
+dc1-leaf1b,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+dc1-leaf1b,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+dc1-leaf1b,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+dc1-leaf1b,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+dc1-leaf1b,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+dc1-leaf1b,VerifyReachability,success,,Verifies reachability to IPv4 BGP neighbors with an update source configured.,Connectivity
+dc1-leaf1b,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
+dc1-leaf1b,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
+dc1-leaf1b,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
+dc1-leaf1b,VerifyIllegalLACP,success,,Verifies there are no illegal LACP packets in all port channels.,Interfaces
+dc1-leaf1b,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 18713,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+dc1-leaf1b,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+dc1-leaf1b,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+dc1-leaf1b,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+dc1-leaf1b,VerifyInterfacesStatus,success,,Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+dc1-leaf1b,VerifyPortChannels,success,,Verifies there are no inactive ports in all port channels.,Interfaces
+dc1-leaf1b,VerifyStormControlDrops,skipped,VerifyStormControlDrops test is not supported on cEOSLab,Verifies there are no interface storm-control drop counters.,Interfaces
+dc1-leaf1b,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Jul 21 10:13:09 leaf1b NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ Jul 21 10:13:29 leaf1b LoadConfig: %SYSDB-3-STARTUP_CONFIG_PARSE_ERROR: Errors encountered in parsing the startup-config
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+dc1-leaf1b,VerifyMlagConfigSanity,success,,Verifies there are no MLAG config-sanity inconsistencies.,MLAG
+dc1-leaf1b,VerifyMlagInterfaces,success,,Verifies there are no inactive or active-partial MLAG ports.,MLAG
+dc1-leaf1b,VerifyMlagReloadDelay,success,,Verifies the reload-delay parameters of the MLAG configuration.,MLAG
+dc1-leaf1b,VerifyMlagStatus,success,,Verifies the health status of the MLAG configuration.,MLAG
+dc1-leaf1b,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+dc1-leaf1b,VerifyTelnetStatus,success,,Verifies if Telnet is disabled in the default VRF.,Security
+dc1-leaf1b,VerifySTPBlockedPorts,success,,Verifies there is no STP blocked ports.,STP
+dc1-leaf1b,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+dc1-leaf1b,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+dc1-leaf1b,VerifyCoredump,success,,Verifies there are no core dump files.,System
+dc1-leaf1b,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  89% / - Higher disk space utilization - Expected: 75% Actual: 89% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  89% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 89%,Verifies that no partition is utilizing more than 75% of its disk space.,System
+dc1-leaf1b,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.50%,Verifies whether the memory utilization is below 75%.,System
+dc1-leaf1b,VerifyNTP,failure,NTP status mismatch - Expected: synchronised Actual: unsynchronised,Verifies if NTP is synchronised.,System
+dc1-leaf1b,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+dc1-leaf2a,VerifyBFDPeersHealth,success,,Verifies the health of IPv4 BFD peers across all VRFs.,BFD
+dc1-leaf2a,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+dc1-leaf2a,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+dc1-leaf2a,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+dc1-leaf2a,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+dc1-leaf2a,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+dc1-leaf2a,VerifyReachability,success,,Verifies reachability to IPv4 BGP neighbors with an update source configured.,Connectivity
+dc1-leaf2a,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
+dc1-leaf2a,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
+dc1-leaf2a,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
+dc1-leaf2a,VerifyIllegalLACP,success,,Verifies there are no illegal LACP packets in all port channels.,Interfaces
+dc1-leaf2a,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 18715,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+dc1-leaf2a,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+dc1-leaf2a,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+dc1-leaf2a,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+dc1-leaf2a,VerifyInterfacesStatus,success,,Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+dc1-leaf2a,VerifyPortChannels,success,,Verifies there are no inactive ports in all port channels.,Interfaces
+dc1-leaf2a,VerifyStormControlDrops,skipped,VerifyStormControlDrops test is not supported on cEOSLab,Verifies there are no interface storm-control drop counters.,Interfaces
+dc1-leaf2a,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Jul 21 10:14:16 leaf2a NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ Jul 21 10:14:40 leaf2a LoadConfig: %SYSDB-3-STARTUP_CONFIG_PARSE_ERROR: Errors encountered in parsing the startup-config
+ Jul 21 12:23:53 dc1-leaf2a Bgp: %BGP-3-NOTIFICATION: sent to neighbor 10.255.0.2 (VRF default AS 65100) 6/7 (Cease/connection collision resolution) 0 bytes 
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+dc1-leaf2a,VerifyMlagConfigSanity,success,,Verifies there are no MLAG config-sanity inconsistencies.,MLAG
+dc1-leaf2a,VerifyMlagInterfaces,success,,Verifies there are no inactive or active-partial MLAG ports.,MLAG
+dc1-leaf2a,VerifyMlagReloadDelay,success,,Verifies the reload-delay parameters of the MLAG configuration.,MLAG
+dc1-leaf2a,VerifyMlagStatus,success,,Verifies the health status of the MLAG configuration.,MLAG
+dc1-leaf2a,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+dc1-leaf2a,VerifyTelnetStatus,success,,Verifies if Telnet is disabled in the default VRF.,Security
+dc1-leaf2a,VerifySTPBlockedPorts,success,,Verifies there is no STP blocked ports.,STP
+dc1-leaf2a,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+dc1-leaf2a,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+dc1-leaf2a,VerifyCoredump,success,,Verifies there are no core dump files.,System
+dc1-leaf2a,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  89% / - Higher disk space utilization - Expected: 75% Actual: 89% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  89% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 89%,Verifies that no partition is utilizing more than 75% of its disk space.,System
+dc1-leaf2a,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.49%,Verifies whether the memory utilization is below 75%.,System
+dc1-leaf2a,VerifyNTP,failure,NTP status mismatch - Expected: synchronised Actual: unsynchronised,Verifies if NTP is synchronised.,System
+dc1-leaf2a,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+dc1-leaf2b,VerifyBFDPeersHealth,success,,Verifies the health of IPv4 BFD peers across all VRFs.,BFD
+dc1-leaf2b,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+dc1-leaf2b,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+dc1-leaf2b,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+dc1-leaf2b,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+dc1-leaf2b,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+dc1-leaf2b,VerifyReachability,success,,Verifies reachability to IPv4 BGP neighbors with an update source configured.,Connectivity
+dc1-leaf2b,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
+dc1-leaf2b,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
+dc1-leaf2b,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
+dc1-leaf2b,VerifyIllegalLACP,success,,Verifies there are no illegal LACP packets in all port channels.,Interfaces
+dc1-leaf2b,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 18706,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+dc1-leaf2b,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+dc1-leaf2b,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+dc1-leaf2b,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+dc1-leaf2b,VerifyInterfacesStatus,success,,Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+dc1-leaf2b,VerifyPortChannels,success,,Verifies there are no inactive ports in all port channels.,Interfaces
+dc1-leaf2b,VerifyStormControlDrops,skipped,VerifyStormControlDrops test is not supported on cEOSLab,Verifies there are no interface storm-control drop counters.,Interfaces
+dc1-leaf2b,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Jul 21 10:15:38 leaf2b NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ Jul 21 10:16:05 leaf2b LoadConfig: %SYSDB-3-STARTUP_CONFIG_PARSE_ERROR: Errors encountered in parsing the startup-config
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+dc1-leaf2b,VerifyMlagConfigSanity,success,,Verifies there are no MLAG config-sanity inconsistencies.,MLAG
+dc1-leaf2b,VerifyMlagInterfaces,success,,Verifies there are no inactive or active-partial MLAG ports.,MLAG
+dc1-leaf2b,VerifyMlagReloadDelay,success,,Verifies the reload-delay parameters of the MLAG configuration.,MLAG
+dc1-leaf2b,VerifyMlagStatus,success,,Verifies the health status of the MLAG configuration.,MLAG
+dc1-leaf2b,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+dc1-leaf2b,VerifyTelnetStatus,success,,Verifies if Telnet is disabled in the default VRF.,Security
+dc1-leaf2b,VerifySTPBlockedPorts,success,,Verifies there is no STP blocked ports.,STP
+dc1-leaf2b,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+dc1-leaf2b,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+dc1-leaf2b,VerifyCoredump,success,,Verifies there are no core dump files.,System
+dc1-leaf2b,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  89% / - Higher disk space utilization - Expected: 75% Actual: 89% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  89% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 89%,Verifies that no partition is utilizing more than 75% of its disk space.,System
+dc1-leaf2b,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.52%,Verifies whether the memory utilization is below 75%.,System
+dc1-leaf2b,VerifyNTP,failure,NTP status mismatch - Expected: synchronised Actual: unsynchronised,Verifies if NTP is synchronised.,System
+dc1-leaf2b,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+dc1-spine1,VerifyBFDPeersHealth,success,,Verifies the health of IPv4 BFD peers across all VRFs.,BFD
+dc1-spine1,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+dc1-spine1,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+dc1-spine1,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+dc1-spine1,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+dc1-spine1,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+dc1-spine1,VerifyReachability,success,,Verifies reachability to IPv4 BGP neighbors with an update source configured.,Connectivity
+dc1-spine1,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
+dc1-spine1,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
+dc1-spine1,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
+dc1-spine1,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 18702,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+dc1-spine1,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+dc1-spine1,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+dc1-spine1,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+dc1-spine1,VerifyInterfacesStatus,success,,Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+dc1-spine1,VerifyStormControlDrops,skipped,VerifyStormControlDrops test is not supported on cEOSLab,Verifies there are no interface storm-control drop counters.,Interfaces
+dc1-spine1,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Jul 21 10:17:04 spine1 NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ Jul 21 10:17:28 spine1 LoadConfig: %SYSDB-3-STARTUP_CONFIG_PARSE_ERROR: Errors encountered in parsing the startup-config
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+dc1-spine1,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+dc1-spine1,VerifyTelnetStatus,success,,Verifies if Telnet is disabled in the default VRF.,Security
+dc1-spine1,VerifySTPBlockedPorts,success,,Verifies there is no STP blocked ports.,STP
+dc1-spine1,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+dc1-spine1,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+dc1-spine1,VerifyCoredump,success,,Verifies there are no core dump files.,System
+dc1-spine1,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  89% / - Higher disk space utilization - Expected: 75% Actual: 89% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  89% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 89%,Verifies that no partition is utilizing more than 75% of its disk space.,System
+dc1-spine1,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.50%,Verifies whether the memory utilization is below 75%.,System
+dc1-spine1,VerifyNTP,failure,NTP status mismatch - Expected: synchronised Actual: unsynchronised,Verifies if NTP is synchronised.,System
+dc1-spine1,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+dc1-spine2,VerifyBFDPeersHealth,success,,Verifies the health of IPv4 BFD peers across all VRFs.,BFD
+dc1-spine2,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+dc1-spine2,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+dc1-spine2,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+dc1-spine2,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+dc1-spine2,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+dc1-spine2,VerifyReachability,success,,Verifies reachability to IPv4 BGP neighbors with an update source configured.,Connectivity
+dc1-spine2,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
+dc1-spine2,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
+dc1-spine2,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
+dc1-spine2,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 18693,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+dc1-spine2,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+dc1-spine2,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+dc1-spine2,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+dc1-spine2,VerifyInterfacesStatus,success,,Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+dc1-spine2,VerifyStormControlDrops,skipped,VerifyStormControlDrops test is not supported on cEOSLab,Verifies there are no interface storm-control drop counters.,Interfaces
+dc1-spine2,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Jul 21 10:18:28 spine2 NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ Jul 21 10:18:55 spine2 LoadConfig: %SYSDB-3-STARTUP_CONFIG_PARSE_ERROR: Errors encountered in parsing the startup-config
+ Jul 21 12:23:53 dc1-spine2 Bgp: %BGP-3-NOTIFICATION: sent to neighbor 10.255.0.5 (VRF default AS 65102) 6/7 (Cease/connection collision resolution) 0 bytes 
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+dc1-spine2,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+dc1-spine2,VerifyTelnetStatus,success,,Verifies if Telnet is disabled in the default VRF.,Security
+dc1-spine2,VerifySTPBlockedPorts,success,,Verifies there is no STP blocked ports.,STP
+dc1-spine2,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+dc1-spine2,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+dc1-spine2,VerifyCoredump,success,,Verifies there are no core dump files.,System
+dc1-spine2,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  89% / - Higher disk space utilization - Expected: 75% Actual: 89% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  89% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 89%,Verifies that no partition is utilizing more than 75% of its disk space.,System
+dc1-spine2,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.48%,Verifies whether the memory utilization is below 75%.,System
+dc1-spine2,VerifyNTP,failure,NTP status mismatch - Expected: synchronised Actual: unsynchronised,Verifies if NTP is synchronised.,System
+dc1-spine2,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
