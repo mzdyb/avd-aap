@@ -1,23 +1,17 @@
-name: Build and Deploy EOS Configuration using Ansible Automation Platform
+name: Build, deploy and validate operational states of Arista EOS devices using Ansible Automation Platform
 
 on:
   push:
     branches:
       - main
-    paths:
-      - 'group_vars/**'
-      # - 'playbooks/build-deploy.yml'
 
 jobs:
-  launch-job-template:
+  trigger_workflow_template:
     runs-on: ubuntu-latest
     steps:
-    - name: Launch Job Template
-      uses: fjogeleit/http-request-action@v1
+    - name: Invoke "Arista AVD - build, deploy and validate operational states" workflow template webhook
+      uses: distributhor/workflow-webhook@v3
       with:
-        url: 'https://aap-rippley.demoredhat.com/api/controller/v2/job_templates/12/launch/'
-        method: 'POST'
-        username: ${{ secrets.AAP_USER }}
-        password: ${{ secrets.AAP_PASSWORD }}
-        customHeaders: '{"Content-Type": "application/json"}'
-        ignoreSsl: true
+        webhook_url: ${{ secrets.WEBHOOK_URL_AVD_AAP }}
+        webhook_secret: ${{ secrets.WEBHOOK_SECRET_AVD_AAP }}
+        verify_ssl: false
