@@ -30,7 +30,7 @@
         path: "{{ repository['path'] }}"
         commit:
           message: "Updates made by Ansible"
-        token: "{{ github_pat }}"
+        token: "{{ lookup('env', 'GITHUB_PAT') }}"
         include: "{{ artifacts_folder }}"
         # remove: true
       delegate_to: localhost
