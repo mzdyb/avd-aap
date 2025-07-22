@@ -6,6 +6,7 @@ on:
       - main
 
 jobs:
+
   trigger_workflow_template:
     runs-on: ubuntu-latest
     steps:
