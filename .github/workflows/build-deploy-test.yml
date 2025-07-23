@@ -4,9 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'group_vars/**'
 
 jobs:
-
   trigger_workflow_template:
     runs-on: ubuntu-latest
     steps:
