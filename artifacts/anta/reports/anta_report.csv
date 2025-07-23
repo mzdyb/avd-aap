@@ -10,7 +10,7 @@ dc1-leaf1a,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling
 dc1-leaf1a,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
 dc1-leaf1a,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
 dc1-leaf1a,VerifyIllegalLACP,success,,Verifies there are no illegal LACP packets in all port channels.,Interfaces
-dc1-leaf1a,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 18920,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+dc1-leaf1a,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 42227,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
 dc1-leaf1a,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
 dc1-leaf1a,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
 dc1-leaf1a,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
@@ -32,8 +32,8 @@ dc1-leaf1a,VerifySTPBlockedPorts,success,,Verifies there is no STP blocked ports
 dc1-leaf1a,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
 dc1-leaf1a,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
 dc1-leaf1a,VerifyCoredump,success,,Verifies there are no core dump files.,System
-dc1-leaf1a,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  89% / - Higher disk space utilization - Expected: 75% Actual: 89% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  89% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 89%,Verifies that no partition is utilizing more than 75% of its disk space.,System
-dc1-leaf1a,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.86%,Verifies whether the memory utilization is below 75%.,System
+dc1-leaf1a,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  90% / - Higher disk space utilization - Expected: 75% Actual: 90% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  90% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 90%,Verifies that no partition is utilizing more than 75% of its disk space.,System
+dc1-leaf1a,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.12%,Verifies whether the memory utilization is below 75%.,System
 dc1-leaf1a,VerifyNTP,failure,NTP status mismatch - Expected: synchronised Actual: unsynchronised,Verifies if NTP is synchronised.,System
 dc1-leaf1a,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
 dc1-leaf1b,VerifyBFDPeersHealth,success,,Verifies the health of IPv4 BFD peers across all VRFs.,BFD
@@ -47,7 +47,7 @@ dc1-leaf1b,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling
 dc1-leaf1b,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
 dc1-leaf1b,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
 dc1-leaf1b,VerifyIllegalLACP,success,,Verifies there are no illegal LACP packets in all port channels.,Interfaces
-dc1-leaf1b,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 18959,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+dc1-leaf1b,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 42268,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
 dc1-leaf1b,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
 dc1-leaf1b,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
 dc1-leaf1b,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
@@ -69,8 +69,8 @@ dc1-leaf1b,VerifySTPBlockedPorts,success,,Verifies there is no STP blocked ports
 dc1-leaf1b,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
 dc1-leaf1b,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
 dc1-leaf1b,VerifyCoredump,success,,Verifies there are no core dump files.,System
-dc1-leaf1b,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  89% / - Higher disk space utilization - Expected: 75% Actual: 89% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  89% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 89%,Verifies that no partition is utilizing more than 75% of its disk space.,System
-dc1-leaf1b,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.77%,Verifies whether the memory utilization is below 75%.,System
+dc1-leaf1b,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  90% / - Higher disk space utilization - Expected: 75% Actual: 90% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  90% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 90%,Verifies that no partition is utilizing more than 75% of its disk space.,System
+dc1-leaf1b,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.58%,Verifies whether the memory utilization is below 75%.,System
 dc1-leaf1b,VerifyNTP,failure,NTP status mismatch - Expected: synchronised Actual: unsynchronised,Verifies if NTP is synchronised.,System
 dc1-leaf1b,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
 dc1-leaf2a,VerifyBFDPeersHealth,success,,Verifies the health of IPv4 BFD peers across all VRFs.,BFD
@@ -84,7 +84,7 @@ dc1-leaf2a,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling
 dc1-leaf2a,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
 dc1-leaf2a,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
 dc1-leaf2a,VerifyIllegalLACP,success,,Verifies there are no illegal LACP packets in all port channels.,Interfaces
-dc1-leaf2a,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 18962,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+dc1-leaf2a,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 42270,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
 dc1-leaf2a,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
 dc1-leaf2a,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
 dc1-leaf2a,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
@@ -107,8 +107,8 @@ dc1-leaf2a,VerifySTPBlockedPorts,success,,Verifies there is no STP blocked ports
 dc1-leaf2a,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
 dc1-leaf2a,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
 dc1-leaf2a,VerifyCoredump,success,,Verifies there are no core dump files.,System
-dc1-leaf2a,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  89% / - Higher disk space utilization - Expected: 75% Actual: 89% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  89% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 89%,Verifies that no partition is utilizing more than 75% of its disk space.,System
-dc1-leaf2a,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.94%,Verifies whether the memory utilization is below 75%.,System
+dc1-leaf2a,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  90% / - Higher disk space utilization - Expected: 75% Actual: 90% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  90% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 90%,Verifies that no partition is utilizing more than 75% of its disk space.,System
+dc1-leaf2a,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.84%,Verifies whether the memory utilization is below 75%.,System
 dc1-leaf2a,VerifyNTP,failure,NTP status mismatch - Expected: synchronised Actual: unsynchronised,Verifies if NTP is synchronised.,System
 dc1-leaf2a,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
 dc1-leaf2b,VerifyBFDPeersHealth,success,,Verifies the health of IPv4 BFD peers across all VRFs.,BFD
@@ -122,7 +122,7 @@ dc1-leaf2b,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling
 dc1-leaf2b,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
 dc1-leaf2b,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
 dc1-leaf2b,VerifyIllegalLACP,success,,Verifies there are no illegal LACP packets in all port channels.,Interfaces
-dc1-leaf2b,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 18954,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+dc1-leaf2b,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 42261,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
 dc1-leaf2b,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
 dc1-leaf2b,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
 dc1-leaf2b,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
@@ -144,8 +144,8 @@ dc1-leaf2b,VerifySTPBlockedPorts,success,,Verifies there is no STP blocked ports
 dc1-leaf2b,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
 dc1-leaf2b,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
 dc1-leaf2b,VerifyCoredump,success,,Verifies there are no core dump files.,System
-dc1-leaf2b,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  89% / - Higher disk space utilization - Expected: 75% Actual: 89% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  89% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 89%,Verifies that no partition is utilizing more than 75% of its disk space.,System
-dc1-leaf2b,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.65%,Verifies whether the memory utilization is below 75%.,System
+dc1-leaf2b,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  90% / - Higher disk space utilization - Expected: 75% Actual: 90% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  90% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 90%,Verifies that no partition is utilizing more than 75% of its disk space.,System
+dc1-leaf2b,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.78%,Verifies whether the memory utilization is below 75%.,System
 dc1-leaf2b,VerifyNTP,failure,NTP status mismatch - Expected: synchronised Actual: unsynchronised,Verifies if NTP is synchronised.,System
 dc1-leaf2b,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
 dc1-spine1,VerifyBFDPeersHealth,success,,Verifies the health of IPv4 BFD peers across all VRFs.,BFD
@@ -158,7 +158,7 @@ dc1-spine1,VerifyReachability,success,,Verifies reachability to IPv4 BGP neighbo
 dc1-spine1,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
 dc1-spine1,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
 dc1-spine1,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
-dc1-spine1,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 18948,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+dc1-spine1,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 42254,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
 dc1-spine1,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
 dc1-spine1,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
 dc1-spine1,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
@@ -175,8 +175,8 @@ dc1-spine1,VerifySTPBlockedPorts,success,,Verifies there is no STP blocked ports
 dc1-spine1,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
 dc1-spine1,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
 dc1-spine1,VerifyCoredump,success,,Verifies there are no core dump files.,System
-dc1-spine1,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  89% / - Higher disk space utilization - Expected: 75% Actual: 89% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  89% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 89%,Verifies that no partition is utilizing more than 75% of its disk space.,System
-dc1-spine1,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.65%,Verifies whether the memory utilization is below 75%.,System
+dc1-spine1,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  90% / - Higher disk space utilization - Expected: 75% Actual: 90% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  90% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 90%,Verifies that no partition is utilizing more than 75% of its disk space.,System
+dc1-spine1,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.87%,Verifies whether the memory utilization is below 75%.,System
 dc1-spine1,VerifyNTP,failure,NTP status mismatch - Expected: synchronised Actual: unsynchronised,Verifies if NTP is synchronised.,System
 dc1-spine1,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
 dc1-spine2,VerifyBFDPeersHealth,success,,Verifies the health of IPv4 BFD peers across all VRFs.,BFD
@@ -189,7 +189,7 @@ dc1-spine2,VerifyReachability,success,,Verifies reachability to IPv4 BGP neighbo
 dc1-spine2,VerifyEnvironmentSystemCooling,skipped,VerifyEnvironmentSystemCooling test is not supported on cEOSLab,Verifies the device's system cooling status.,Hardware
 dc1-spine2,VerifyTemperature,skipped,VerifyTemperature test is not supported on cEOSLab,Verifies if the device temperature is within acceptable limits.,Hardware
 dc1-spine2,VerifyTransceiversTemperature,skipped,VerifyTransceiversTemperature test is not supported on cEOSLab,Verifies if all the transceivers are operating at an acceptable temperature.,Hardware
-dc1-spine2,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 18938,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+dc1-spine2,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 42245,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
 dc1-spine2,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
 dc1-spine2,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
 dc1-spine2,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
@@ -207,7 +207,7 @@ dc1-spine2,VerifySTPBlockedPorts,success,,Verifies there is no STP blocked ports
 dc1-spine2,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
 dc1-spine2,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
 dc1-spine2,VerifyCoredump,success,,Verifies there are no core dump files.,System
-dc1-spine2,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  89% / - Higher disk space utilization - Expected: 75% Actual: 89% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  89% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 89%,Verifies that no partition is utilizing more than 75% of its disk space.,System
-dc1-spine2,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.79%,Verifies whether the memory utilization is below 75%.,System
+dc1-spine2,VerifyFileSystemUtilization,failure,Mount point: overlay                   15G   14G  1.7G  90% / - Higher disk space utilization - Expected: 75% Actual: 90% - Mount point: /dev/mapper/fedora-root   15G   14G  1.7G  90% /mnt/flash - Higher disk space utilization - Expected: 75% Actual: 90%,Verifies that no partition is utilizing more than 75% of its disk space.,System
+dc1-spine2,VerifyMemoryUtilization,failure,Device has reported a high memory usage - Expected: < 75% Actual: 91.19%,Verifies whether the memory utilization is below 75%.,System
 dc1-spine2,VerifyNTP,failure,NTP status mismatch - Expected: synchronised Actual: unsynchronised,Verifies if NTP is synchronised.,System
 dc1-spine2,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
