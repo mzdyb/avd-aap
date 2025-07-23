@@ -4,7 +4,7 @@ This repository is a forked and modified version of the [Arista Netdevops Commun
 
 ## Overview
 
-This project implements an automated network infrastructure management workflow using Arista Validated Designs (AVD) and Ansible Automation Platform (AAP). The solution provides an example of end-to-end automation for network configuration management, deployment and validation.
+This project implements an automated network infrastructure management workflow using Arista Validated Designs (AVD) and Ansible Automation Platform (AAP). The solution provides basic example of end-to-end automation for network configuration management, deployment and validation.
 
 ## Key Features
 
