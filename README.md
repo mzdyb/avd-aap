@@ -5,7 +5,7 @@ This repository is a forked and modified version of the [Arista Netdevops Commun
 ## Overview
 
 This project implements an automated network infrastructure management workflow using Arista Validated Designs (AVD) and Ansible Automation Platform (AAP). The solution provides a basic example of end-to-end automation for network configuration management, deployment and validation.
-In this example AAP deploys configurations directly to network devices via eAPI. The same solution can be applied when CloudVision is used for configuration deployment. In both cases the main benefit is introducing the Infrastructure as Code approach with powerful, enterprise-class AAP automation features.
+In this example AAP deploys configurations directly to network devices via eAPI. The same solution can be applied when CloudVision is used for configuration deployment. In both cases the main benefit is introducing the Infrastructure as Code approach with powerful, enterprise-class AAP automation features. In addition AAP configuration itself is managed using AAP Configuration as Code approach (AAP-CaC).
 
 ## Key Features
 
